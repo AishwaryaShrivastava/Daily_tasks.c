@@ -1,0 +1,124 @@
+// 1. Arithmetic Operators
+
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter the value of a: ");
+    scanf("%d", &a);
+    printf("Enter the value of b: ");
+    scanf("%d", &b);
+    printf("Addition: %d\n", a + b);
+    printf("Subtraction: %d\n", a - b);
+    printf("Multiplication: %d\n", a * b);
+    printf("Division: %d\n", a / b);
+    printf("Modulus: %d\n", a % b);
+    return 0;
+}
+
+// 2. Relational Operators
+
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter the value of a: ");
+    scanf("%d", &a);
+    printf("Enter the value of b: ");
+    scanf("%d", &b);
+    printf("a > b  : %d\n", a > b);
+    printf("a < b  : %d\n", a < b);
+    printf("a == b : %d\n", a == b);
+    printf("a != b : %d\n", a != b);
+    printf("a >= b : %d\n", a >= b);
+    printf("a <= b : %d\n", a <= b);
+    return 0;
+}
+
+// 3. Logical Operators
+
+#include <stdio.h>
+int main() {
+    int marks;
+    printf("Enter marks: ");
+    scanf("%d", &marks);
+    printf("Pass: %d\n", (marks >= 40 && marks <= 100));
+    printf("Fail: %d\n", (marks >= 0 && marks < 40));
+    printf("Invalid: %d\n", !(marks >= 0 && marks <= 100));
+    printf("Valid OR Excellent: %d\n", (marks >= 0 && marks <= 100) || marks > 90);
+    return 0;
+}
+
+// 4. Bitwise Operators
+
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter value for a: ");
+    scanf("%d", &a);
+    printf("Enter value for b: ");
+    scanf("%d", &b);
+    printf("a = %d, b = %d\n", a, b);
+    printf("a & b = %d\n", a & b);
+    printf("a | b = %d\n", a | b);
+    printf("a ^ b = %d\n", a ^ b);
+    printf("~a = %d\n", ~a);
+    printf("a << 1 = %d\n", a << 1);
+    printf("a >> 1 = %d\n", a >> 1);
+    return 0;
+}
+
+// 5. Compound Assignment Operators
+
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter value for a: ");
+    scanf("%d", &a);
+    printf("Enter value for b: ");
+    scanf("%d", &b);
+    printf("a += b: %d\n", a += b);
+    printf("a -= b: %d\n", a -= b);
+    printf("a *= b: %d\n", a *= b);
+    printf("a /= b: %d\n", a /= b);
+    printf("a %%= b: %d\n", a %= b);
+    return 0;
+}
+
+// 6. Increment and Decrement Operators
+
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter a and b: ");
+    scanf("%d%d", &a, &b);
+    printf("%d\n", a++);
+    printf("%d\n", ++b);
+    printf("%d\n", a--);
+    printf("%d\n", --b);
+    return 0;
+}
+
+// 7. Ternary Operator to Find Maximum
+
+#include <stdio.h>
+int main() {
+    int a, b, max;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    max = (a > b) ? a : b;
+    printf("Maximum: %d\n", max);
+    return 0;
+}
+
+// 8. Sizeof Operator
+
+#include <stdio.h>
+int main() {
+    printf("Size of int: %lu bytes\n", sizeof(int));
+    printf("Size of float: %lu bytes\n", sizeof(float));
+    printf("Size of double: %lu bytes\n", sizeof(double));
+    printf("Size of char: %lu bytes\n", sizeof(char));
+    printf("Size of long: %lu bytes\n", sizeof(long));
+    printf("Size of long long: %lu bytes\n", sizeof(long long));
+    printf("Size of short: %lu bytes\n", sizeof(short));
+    return 0;
+}
