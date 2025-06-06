@@ -1,144 +1,157 @@
-Here’s a set of **daily-life-based C programming practice questions** focusing on the following topics:
+//1_bitwise_home_light_switches.c
+#include<stdio.h>
+int main() {
+    unsigned char lights = 0b00000000;
+    lights = lights | (1 << 2);
+    lights = lights | (1 << 6);
+    lights = lights ^ (1 << 4);
+    if (lights & (1 << 1))
+        printf("Light 2 is ON\n");
+    else
+        printf("Light 2 is OFF\n");
+    return 0;
+}
 
-* **Bitwise operators**
-* **Shift operators**
-* **`if` / `if-else` / nested `if-else`**
-* **Looping statements** (`for`, `while`, `do-while`)
+//2_shift_digital_clock.c
+#include<stdio.h>
+int main() {
+    int seconds;
+    printf("Enter seconds: ");
+    scanf("%d", &seconds);
+    printf("Seconds x2 = %d\n", seconds << 1);
+    printf("Seconds x4 = %d\n", seconds << 2);
+    printf("Seconds x8 = %d\n", seconds << 3);
+    printf("Seconds /2 = %d\n", seconds >> 1);
+    printf("Seconds /4 = %d\n", seconds >> 2);
+    printf("Seconds /8 = %d\n", seconds >> 3);
+    return 0;
+}
 
-These problems are designed to reflect real-world scenarios, making learning more intuitive and interesting.
+//3_if_traffic_light.c
+#include<stdio.h>
+int main() {
+    char color;
+    printf("Enter traffic light color (R/Y/G): ");
+    scanf(" %c", &color);
+    if (color == 'R') printf("Stop\n");
+    if (color == 'Y') printf("Get Ready\n");
+    if (color == 'G') printf("Go\n");
+    return 0;
+}
 
----
+//4_if_else_temperature.c
+#include<stdio.h>
+int main() {
+    float temp;
+    printf("Enter room temperature: ");
+    scanf("%f", &temp);
+    if (temp > 30)
+        printf("Turn on AC\n");
+    else
+        printf("No need for AC\n");
+    return 0;
+}
 
-### 🔹 **1. Bitwise Operators – Daily Life Problem**
+//5_nested_if_bus_ticket.c
+#include<stdio.h>
+int main() {
+    int age;
+    char gender;
+    printf("Enter age: ");
+    scanf("%d", &age);
+    printf("Enter gender (M/F): ");
+    scanf(" %c", &gender);
+    if (age < 12)
+        printf("50%% discount\n");
+    else if (age >= 60) {
+        if (gender == 'F')
+            printf("40%% discount\n");
+        else
+            printf("30%% discount\n");
+    } else
+        printf("No discount\n");
+    return 0;
+}
 
-**Problem: Home Light Switches**
+//6_for_loop_electricity.c
+#include<stdio.h>
+int main() {
+    int units[30], i, total = 0;
+    float avg;
+    for (i = 0; i < 30; i++) {
+        printf("Enter units for day %d: ", i + 1);
+        scanf("%d", &units[i]);
+        total += units[i];
+    }
+    avg = total / 30.0;
+    printf("Total = %d units\n", total);
+    printf("Average = %.2f units/day\n", avg);
+    return 0;
+}
 
-You have 8 lights in your home, each represented by a bit (1 = ON, 0 = OFF). Write a C program that:
+//7_while_loop_pin_entry.c
+#include<stdio.h>
+int main() {
+    int pin, attempts = 0;
+    while (attempts < 3) {
+        printf("Enter 4-digit PIN: ");
+        scanf("%d", &pin);
+        if (pin == 1234) {
+            printf("Access granted\n");
+            break;
+        }
+        attempts++;
+    }
+    if (attempts == 3)
+        printf("Card blocked\n");
+    return 0;
+}
 
-* Turns ON light 3 and light 7.
-* Toggles the state of light 5.
-* Checks whether light 2 is ON or OFF.
+//8_do_while_wash_timer.c
+#include<stdio.h>
+int main() {
+    int time;
+    printf("Enter wash cycle time (in seconds): ");
+    scanf("%d", &time);
+    do {
+        printf("Time left: %d\n", time);
+        time--;
+    } while (time >= 0);
+    return 0;
+}
 
-> Use bitwise operators: `|`, `&`, `^`, `~`
+//9_bitwise_smart_home.c
+#include<stdio.h>
+int main() {
+    int sensor;
+    int count = 0;
+    printf("Enter 4-bit sensor value (0-15): ");
+    scanf("%d", &sensor);
+    while (sensor > 0) {
+        if (sensor & 1)
+            count++;
+        sensor = sensor >> 1;
+    }
+    printf("Occupied rooms: %d\n", count);
+    return 0;
+}
 
----
+//10_combined_water_purifier.c
+#include<stdio.h>
+#include<stdlib.h>
+int main() {
+    int day, badCount = 0, status;
+    for (day = 1; day <= 7; day++) {
+        status = rand() % 2;
+        printf("Day %d - Filter status: %s\n", day, status ? "Bad" : "Good");
+        if (status)
+            badCount++;
+    }
+    if (badCount > 3)
+        printf("Service Required\n");
+    else
+        printf("Filter OK\n");
+    return 0;
+}
 
-### 🔹 **2. Shift Operators – Digital Clock Timer**
 
-**Problem: Digital Clock Multiplication**
-
-Imagine you're building a basic clock that counts seconds. To convert seconds into milliseconds (by multiplying by 1000), instead try to optimize:
-
-* Multiply a number by 2, 4, 8 using **left shift (`<<`)**.
-* Divide a number by 2, 4, 8 using **right shift (`>>`)**.
-
-> Write a program that asks for seconds and displays the result using only shift operations.
-
----
-
-### 🔹 **3. If Statement – Traffic Light System**
-
-**Problem: Pedestrian Crossing**
-
-Ask the user to input the color of a traffic light (`R`, `Y`, `G`):
-
-* If it's Red (`R`), print: "Stop".
-* If it's Yellow (`Y`), print: "Get Ready".
-* If it's Green (`G`), print: "Go".
-
-> Use simple `if` statements (no `else`).
-
----
-
-### 🔹 **4. If-Else – Temperature Monitor**
-
-**Problem: Room AC Controller**
-
-Get the current room temperature as input.
-
-* If it's greater than 30°C, print "Turn on AC".
-* If it's 30°C or below, print "No need for AC".
-
-> Use `if-else`.
-
----
-
-### 🔹 **5. Nested If-Else – Bus Ticket Fare**
-
-**Problem: Bus Fare Discount System**
-
-Ask the user for:
-
-* Age
-* Gender
-
-Apply discounts:
-
-* If age < 12: 50% discount
-* Else if age >= 60:
-
-  * If female: 40% discount
-  * Else: 30% discount
-* Else: No discount
-
-> Use nested `if-else`.
-
----
-
-### 🔹 **6. For Loop – Electricity Bill**
-
-**Problem: Monthly Electricity Calculation**
-
-Assume you use a smart meter that records electricity usage per day for 30 days. Ask the user to enter daily usage in units (one value per day), and calculate total and average.
-
-> Use a `for` loop to iterate over 30 days.
-
----
-
-### 🔹 **7. While Loop – Password Retry**
-
-**Problem: ATM PIN Entry**
-
-Ask the user to enter a 4-digit PIN. Allow up to 3 attempts. If correct, print “Access granted”, otherwise print “Card blocked”.
-
-> Use a `while` loop.
-
----
-
-### 🔹 **8. Do-While Loop – Washing Machine Timer**
-
-**Problem: Countdown Timer**
-
-Ask the user for wash cycle time in seconds. Print a countdown from that number to 0, one per second.
-
-> Use a `do-while` loop.
-
----
-
-### 🔹 **9. Bitwise Logic – Smart Home Control**
-
-**Problem: Sensor Alerts**
-
-You have sensors in 4 rooms. Each bit in a 4-bit number represents if a room is occupied (1) or empty (0). Write a program that:
-
-* Takes a 4-bit value (e.g. 0b1011).
-* Counts how many rooms are occupied.
-
-> Use bitwise AND and right shift in a loop.
-
----
-
-### 🔹 **10. Combined Task – Water Purifier Status**
-
-**Problem: Maintenance Alert System**
-
-You have a system that:
-
-* Uses bitwise flags to check filter health.
-* Uses `if` statements to decide what to do.
-* Uses a loop to monitor status for 7 days.
-
-**Write a program that:**
-
-* For each day, randomly sets filter status (good or bad using bits).
-* If filter is bad for more than 3 days, print “Service Required”.
