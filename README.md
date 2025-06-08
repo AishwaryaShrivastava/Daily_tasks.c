@@ -207,3 +207,53 @@ You have a system that:
 * For each day, randomly sets filter status (good or bad using bits).
 * If filter is bad for more than 3 days, print “Service Required”.
 
+
+# 8th June C Programming Task – Type Casting in C
+
+This project contains a set of beginner-friendly C programs focused on exploring and practicing **type casting** in C programming. Each program is designed to demonstrate specific scenarios where either **implicit** or **explicit** type conversions are used in practical applications.
+
+---
+
+## 📂 Task Overview
+
+### 1. Fahrenheit to Celsius Conversion
+- Converts a temperature from Fahrenheit to Celsius.
+- Uses **explicit type casting** to print the Celsius temperature as an integer.
+
+### 2. Integer Division with Float Result
+- Divides two integers and displays the result as a **float**.
+- Demonstrates **explicit type casting** for accurate decimal division.
+
+### 3. Implicit vs Explicit Casting
+- Adds an integer and a float together.
+- Highlights the difference between **implicit casting** (automatically handled by compiler) and **explicit casting** (done manually).
+
+### 4. Character to ASCII Conversion
+- Takes a **character input** and prints its **ASCII value**.
+- Uses explicit type casting to convert the character to its integer representation.
+
+### 5. Float Salary to Integer for Reporting
+- A float salary value is converted to an **integer** for reporting purposes.
+- Demonstrates loss of precision when truncating decimal parts.
+
+### 6. Average Marks as Float
+- Calculates the **average of three integer marks**.
+- Converts the result to float to ensure accurate decimal output.
+
+### 7. Double to Int Conversion
+- Converts a **double** value to **int**.
+- Highlights **precision loss** due to truncation of decimal values.
+
+### 8. Weight Conversion for Packaging
+- A float weight is **rounded down** using type casting to fit packaging rules.
+- Uses explicit cast to truncate decimal and return whole number.
+
+### 9. Mixed-Type Billing Calculation
+- Combines **rupees (int)** and **paise (float)** to compute total amount.
+- Uses casting to normalize both values into a single float total.
+
+### 10. Compare Results With and Without Casting
+- Performs the same division operation using **int** and **float**.
+- Compares results to show the importance of casting in avoiding integer truncation.
+
+
