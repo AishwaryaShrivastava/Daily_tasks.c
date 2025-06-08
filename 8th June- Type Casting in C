@@ -1,0 +1,111 @@
+//1. Fahrenheit to Celsius Conversion
+#include<stdio.h>
+int main() {
+    float fahrenheit;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+    int celsius = (int)((fahrenheit - 32) * 5 / 9);
+    printf("Celsius (as integer): %d\n", celsius);
+    return 0;
+}
+
+// 2. Integer Division with Float Result
+#include<stdio.h>
+int main() {
+    int a, b;
+    printf("Enter two integers: ");
+    scanf("%d%d", &a, &b);
+    float result = (float)a / b;
+    printf("Float result: %.2f\n", result);
+    return 0;
+}
+
+//3. Implicit vs Explicit Casting
+#include<stdio.h>
+int main() {
+    int a = 5;
+    float b = 2.5;
+    float implicit = a + b;         // implicit cast
+    float explicit = (float)a + b;  // explicit cast
+    printf("Implicit casting: %.2f\n", implicit);
+    printf("Explicit casting: %.2f\n", explicit);
+    return 0;
+}
+
+//4. Character to ASCII Conversion
+#include<stdio.h>
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+    printf("ASCII value: %d\n", (int)ch);
+    return 0;
+}
+
+//5. Float Salary to Integer for Reporting
+#include<stdio.h>
+int main() {
+    float salary;
+    printf("Enter salary (float): ");
+    scanf("%f", &salary);
+    int reportSalary = (int)salary;
+    printf("Reported salary (int): %d\n", reportSalary);
+    return 0;
+}
+
+//6. Average Marks as Float
+#include<stdio.h>
+int main() {
+    int m1, m2, m3;
+    printf("Enter 3 marks: ");
+    scanf("%d%d%d", &m1, &m2, &m3);
+    float avg = (float)(m1 + m2 + m3) / 3;
+    printf("Average: %.2f\n", avg);
+    return 0;
+}
+
+//7. Double to Int Conversion
+#include<stdio.h>
+int main() {
+    double d;
+    printf("Enter a double value: ");
+    scanf("%lf", &d);
+    int i = (int)d;
+    printf("Double: %.5lf, After conversion to int: %d\n", d, i);
+    printf("Note: Precision after decimal is lost.\n");
+    return 0;
+}
+
+//8. Weight Conversion for Packaging
+#include<stdio.h>
+int main() {
+    float weight;
+    printf("Enter package weight (float): ");
+    scanf("%f", &weight);
+    int packedWeight = (int)weight;
+    printf("Rounded down weight: %d kg\n", packedWeight);
+    return 0;
+}
+
+//9. Mixed-Type Billing Calculation
+#include<stdio.h>
+int main() {
+    int rupees;
+    float paise;
+    printf("Enter rupees and paise: ");
+    scanf("%d%f", &rupees, &paise);
+    float total = rupees + (paise / 100);
+    printf("Total price: ₹%.2f\n", total);
+    return 0;
+}
+
+//10. Compare Results With and Without Casting
+#include<stdio.h>
+int main() {
+    int a = 5, b = 2;
+    int intDiv = a / b;
+    float floatDiv = (float)a / b;
+    printf("Without casting (int division): %d\n", intDiv);
+    printf("With casting (float division): %.2f\n", floatDiv);
+    return 0;
+}
