@@ -1,0 +1,101 @@
+// 1. Print Name, Roll Number, and Branch
+
+#include<stdio.h>
+int main() {
+    printf("Name: Aishwarya Shrivastava\n");
+    printf("Roll Number: 300102222109\n");
+    printf("Branch: CSE\n");
+    return 0;
+}
+
+//2. Sum of Two Numbers
+
+#include<stdio.h>
+int main() {
+    int a, b, sum;
+    scanf("%d%d", &a, &b);
+    sum = a + b;
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+
+// 3. Check Positive, Negative, or Zero
+
+#include<stdio.h>
+int main() {
+    int n;
+    scanf("%d", &n);
+    if(n > 0)
+        printf("Positive\n");
+    else if(n < 0)
+        printf("Negative\n");
+    else
+        printf("Zero\n");
+    return 0;
+}
+
+//4. Greatest of Two Numbers
+
+#include<stdio.h>
+int main() {
+    int a, b;
+    scanf("%d%d", &a, &b);
+    if(a > b)
+        printf("%d is greater\n", a);
+    else
+        printf("%d is greater\n", b);
+    return 0;
+}
+
+//5. Day of the Week Using Switch
+
+#include<stdio.h>
+int main() {
+    int day;
+    scanf("%d", &day);
+    switch(day) {
+        case 1: printf("Monday\n"); break;
+        case 2: printf("Tuesday\n"); break;
+        case 3: printf("Wednesday\n"); break;
+        case 4: printf("Thursday\n"); break;
+        case 5: printf("Friday\n"); break;
+        case 6: printf("Saturday\n"); break;
+        case 7: printf("Sunday\n"); break;
+        default: printf("Invalid input\n");
+    }
+    return 0;
+}
+
+//6. Voting Eligibility
+
+#include<stdio.h>
+int main() {
+    int age;
+    scanf("%d", &age);
+    if(age >= 18)
+        printf("Eligible to vote\n");
+    else
+        printf("Not eligible to vote\n");
+    return 0;
+}
+
+//7. Difference between = and ==
+
+//Difference Between = and == in C
+//Operator              Name	                         Purpose
+//   =	        Assignment Operator      	Assigns a value to a variable
+//  ==	        Equality Operator        	Compares two values for equality
+
+#include<stdio.h>
+int main() {
+    int a = 10;    // Assignment: sets a to 10
+    int b = 10;
+
+    if(a == b) {   // Comparison: checks if a is equal to b
+        printf("a is equal to b\n");
+    } else {
+        printf("a is not equal to b\n");
+    }
+
+    return 0;
+}
