@@ -1,0 +1,121 @@
+
+//1.	Write a C program to search an element in an array using linear search.
+#include <stdio.h>
+void main() 
+{ 
+    int i, n, a[10], key, found = 0;
+    printf("Enter the number of elements (max 10):\n");
+    scanf("%d", &n);
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) 
+    {  
+        scanf("%d", &a[i]);
+    }   
+    printf("Enter the key element to search:\n");
+    scanf("%d", &key);
+    for(i = 0; i < n; i++) 
+    {
+        if(key == a[i])
+        {  
+            printf("Successful search. Element found at position %d\n", i + 1);
+            found = 1;
+            break;
+        } 
+    }
+
+    if(!found)
+        printf("Unsuccessful search. Element not found.\n");
+}
+//OUTPUT
+
+//Enter the number of elements (max 10):
+//5
+//Enter array elements:
+//8 5 2 9 4
+//Enter the key element to search:
+//4
+//Successful search. Element found at position 5
+
+//2.	Write a C program to search an element in a sorted array using binary search.
+#include <stdio.h>
+void main()
+{
+    int i, n, low, high, mid, a[50], key, found = 0;
+    printf("Enter the number of elements\n");
+    scanf("%d", &n);
+    printf("Enter the elements in sorted order\n");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    printf("Enter the key element to be searched\n");
+    scanf("%d", &key);
+    low = 0;
+    high = n - 1;
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
+        if (key == a[mid])
+        {
+            printf("Successful search. Element found at position %d\n", mid + 1);
+            found = 1;
+            break;
+        }
+        else if (key < a[mid])
+        {
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    if (!found)
+        printf("Unsuccessful search. Element not found.\n");
+}
+//OUTPUT
+//Enter the number of elements
+//6
+//Enter the elements in sorted order
+//1 2 3 4 5 6
+//Enter the key element to be searched
+//6
+//Successful search. Element found at position 6
+
+//3.	Write a C program to sort an array using Bubble Sort.
+#include <stdio.h>
+void main()
+{
+    int a[50], n, i, j, temp;
+    printf("Enter the number of elements:\n");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = 0; j < n - 1 - i; j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted array in ascending order:\n");
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+}
+
+//OUTPUT
+
+//Enter the number of elements:
+//8
+//Enter 8 elements:
+//4 7 2 9 1 3 0 6
+//Sorted array in ascending order:
+//0 1 2 3 4 6 7 9
